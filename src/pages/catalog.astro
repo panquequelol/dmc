@@ -1,0 +1,28 @@
+---
+import EquipmentCard from "../components/EquipmentCard";
+import { solar_equipment } from "../vars";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="DMC ingeniería eléctrica">
+  <section>
+    <div class="flex justify-between items-end">
+      <h2>Venta de equipos fotovoltaicos</h2>
+    </div>
+    <p class="text-balance text-slate-500 mb-4">
+      Además de proyectos eléctricos, ofrecemos la venta de equipos
+      fotovoltaicos y soluciones de iluminación solar.
+    </p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {
+        solar_equipment.map((equipment) => (
+          <EquipmentCard
+            client:idle
+            src={equipment.src}
+            product={equipment.product}
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,120 @@
+---
+import "@fontsource/atkinson-hyperlegible/400.css";
+import "@fontsource/atkinson-hyperlegible/700.css";
+import WhatsappButton from "../components/WhatsappButton";
+import PhoneMini from "../components/icons/PhoneMini";
+import ShoppingBagMini from "../components/icons/ShoppingBagMini";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen text-blue-950 bg-slate-50 font-body text-lg">
+    <nav
+      class="text-blue-800 p-2 sticky top-0 z-50 bg-slate-100 border-b border-slate-200"
+    >
+      <div class="flex justify-between gap-4 items-center max-w-5xl mx-auto">
+        <div class="flex gap-4 items-center">
+          <a href="/">
+            <img
+              class="w-14 h-14 aspect-square object-contain shrink-0"
+              src="/assets/logo_transparent.png"
+              alt="Logo de DMC Ingeniería Eléctrica"
+            />
+          </a>
+          <div>
+            <h1 class="font-semibold">DMC Ingeniería Eléctrica</h1>
+            <p
+              class="text-base md:text-lg leading-none text-balance tracking-tight"
+            >
+              Instalaciones eléctricas y energía solar.
+            </p>
+          </div>
+        </div>
+        <a
+          class="hover:opacity-60 duration-200 flex items-center gap-1"
+          href="/catalog"
+        >
+          <ShoppingBagMini className="w-8 h-8" />
+          <span class="hidden md:inline">Equipos fotovoltaicos</span>
+        </a>
+        <div class="hidden md:block">
+          <WhatsappButton />
+        </div>
+      </div>
+    </nav>
+    <main class="max-w-5xl p-4 space-y-10 md:space-y-16 mx-auto">
+      <slot />
+    </main>
+    <footer class="bg-white border-t pb-20 p-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex justify-between">
+          <img
+            class="max-w-[40vw] shrink-0 aspect-square md:max-w-64"
+            src="./assets/logo.png"
+            alt="Logo de DMC ingeniería eléctrica"
+          />
+          <div class="text-lg md:text-2xl space-y-4">
+            <a
+              href="https://www.instagram.com/ingenieriadmc"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex gap-1 items-center text-blue-700"
+            >
+              <img
+                class="w-8 h-8"
+                src="./instagram.svg"
+                alt="Logo de Instagram"
+              />
+              @ingenieriadmc
+            </a>
+            <a
+              class="flex gap-1 items-center text-blue-700"
+              href="https://wa.me/56999312713"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="w-8 h-8"
+                src="./whatsapp.svg"
+                alt="Logo de Whatsapp"
+              />
+              +56 9 99312713
+            </a>
+            <p class="flex gap-1 items-center"><PhoneMini /> 44 3037 625</p>
+          </div>
+        </div>
+        <p class="text-center">©INGENIERIADMC.LTDA</p>
+      </div>
+    </footer>
+    <div
+      class="md:hidden fixed bottom-0 flex p-2 justify-center w-full font-sans"
+    >
+      <a
+        class="bg-green-500/95 px-4 py-2 text-white flex justify-center gap-2 font-semibold rounded-lg w-full"
+      >
+        <img src="/whatsapp.svg" class="h-7 w-7" /> Contactanos
+      </a>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: "Ortica Linear";
+    src: url("/OrticaLinear-Regular.woff2") format("woff2");
+  }
+</style>
