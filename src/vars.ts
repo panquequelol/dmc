@@ -22,8 +22,8 @@ export const best_images = [
     alt: "Instalacion de paneles solares en Valdivia",
   },
   {
-    src: "/assets/viviendas_installation.jpg",
-    alt: "Instalaciones electricas en viviendas",
+    src: "/assets/viviendas_controls.jpg",
+    alt: "Viviendas controles",
   },
 ];
 

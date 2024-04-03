@@ -18,26 +18,13 @@ import ShoppingBagMini from "../components/icons/ShoppingBagMini";
         alumbrado público en plazas y parques.
       </p>
     </div>
-    <div class="relative max-w-[90vw] md:max-w-4xl mx-auto">
-      <Showcase client:idle images={best_images} className="md:max-h-[30rem]" />
-    </div>
+    <Showcase client:idle images={best_images} classImage="md:max-h-[30rem]" />
   </section>
   <section>
-    <div class="flex md:flex-col justify-between items-end">
+    <div class="flex justify-between items-center">
       <h3>Venta de equipos fotovoltaicos</h3>
       <a
-        class="bg-slate-200
-      font-sans
-      justify-center
-      text-black
-      rounded-md
-      hover:opacity-75
-      duration-200
-      text-center
-      text-sm
-      py-1.5 px-4
-      border
-      border-slate-300 flex gap-1 items-center grow-0"
+        class="bg-slate-200 font-sans justify-center text-black rounded-md hover:opacity-75 duration-200 text-center text-sm py-1.5 px-4 border border-slate-300 flex gap-1 items-center grow-0"
         href="/catalog"
       >
         <ShoppingBagMini />
@@ -62,7 +49,7 @@ import ShoppingBagMini from "../components/icons/ShoppingBagMini";
       }
     </div>
   </section>
-  <section class="space-y-4">
+  <section class="space-y-10">
     <article class="grid md:grid-cols-2 gap-4">
       <div class="self-center">
         <p>Nuestros servicios</p>
@@ -73,88 +60,85 @@ import ShoppingBagMini from "../components/icons/ShoppingBagMini";
           configuraciones Ongrid, Offgrid e híbridas.
         </p>
       </div>
-      <div class="relative w-[calc(100vw-2rem)]">
-        <Showcase
-          client:idle
-          description="Tecnobox, Mall Outlet, Happy Days Waffles, entre otros."
-          images={[
-            {
-              src: "/assets/flores_outletmall_installation.jpg",
-              alt: "Instalacion flores outlet mall",
-            },
-            {
-              src: "/assets/happydayswafles_1.jpg",
-              alt: "Primera trabajo en Happy Days Wafles",
-            },
-            {
-              src: "/assets/tecnobox_1.jpg",
-              alt: "Tecnobox 1",
-            },
-            {
-              src: "/assets/tecnobox_2.jpg",
-              alt: "Tecnobox 2",
-            },
-            {
-              src: "/assets/happydayswafles_2.jpg",
-              alt: "Primera trabajo en Happy Days Wafles",
-            },
-            {
-              src: "/assets/happydayswafles_3.jpg",
-              alt: "Segundo trabajo en Happy Days Wafles",
-            },
-            {
-              src: "/assets/otros_1.jpg",
-              alt: "Otras instalaciones electricas",
-            },
-            {
-              src: "/assets/otros_2.jpg",
-              alt: "Otros trabajos electricos",
-            },
-            {
-              src: "/assets/otros_3.jpg",
-              alt: "Otras instalaciones",
-            },
-          ]}
-        />
-      </div>
+      <Showcase
+        client:idle
+        description="Tecnobox, Mall Outlet, Happy Days Waffles, entre otros."
+        images={[
+          {
+            src: "/assets/flores_outletmall_installation.jpg",
+            alt: "Instalacion flores outlet mall",
+          },
+          {
+            src: "/assets/happydayswafles_1.jpg",
+            alt: "Primera trabajo en Happy Days Wafles",
+          },
+          {
+            src: "/assets/tecnobox_1.jpg",
+            alt: "Tecnobox 1",
+          },
+          {
+            src: "/assets/tecnobox_2.jpg",
+            alt: "Tecnobox 2",
+          },
+          {
+            src: "/assets/happydayswafles_2.jpg",
+            alt: "Primera trabajo en Happy Days Wafles",
+          },
+          {
+            src: "/assets/happydayswafles_3.jpg",
+            alt: "Segundo trabajo en Happy Days Wafles",
+          },
+          {
+            src: "/assets/otros_1.jpg",
+            alt: "Otras instalaciones electricas",
+          },
+          {
+            src: "/assets/otros_2.jpg",
+            alt: "Otros trabajos electricos",
+          },
+          {
+            src: "/assets/otros_3.jpg",
+            alt: "Otras instalaciones",
+          },
+        ]}
+      />
     </article>
     <article class="grid md:grid-cols-2 gap-4">
-      <div class="order-2 relative w-[calc(100vw-2rem)]">
-        <Showcase
-          client:idle
-          description="Valdivia, Los Ríos"
-          images={[
-            {
-              src: "/assets/solar_valdivia_roof1.jpg",
-              alt: "Techo de la casa en Valdivia",
-            },
-            {
-              src: "/assets/solar_valdivia_installation2.jpg",
-              alt: "Instalacion en la region de Los Ríos",
-            },
-            {
-              src: "/assets/solar_valdivia_roof2.jpg",
-              alt: "Techo en la region de Los Ríos, Chile",
-            },
-            {
-              src: "/assets/solar_valdivia_control1.jpg",
-              alt: "Otro tipo de instalaciones solares en Valdivia, Los Ríos, Chile",
-            },
-            {
-              src: "/assets/solar_valdivia_roof3.jpg",
-              alt: "Otro tipo de instalaciones solares en Valdivia, Los Ríos, Chile",
-            },
-            {
-              src: "/assets/solar_valdivia_installation1.jpg",
-              alt: "Otro tipo de instalaciones solares en Valdivia, Los Ríos, Chile",
-            },
-            {
-              src: "/assets/solar_valdivia_roof4.jpg",
-              alt: "Otro tipo de instalaciones solares en Valdivia, Los Ríos, Chile",
-            },
-          ]}
-        />
-      </div>
+      <Showcase
+        client:idle
+        description="Valdivia, Los Ríos"
+        images={[
+          {
+            src: "/assets/solar_valdivia_roof1.jpg",
+            alt: "Techo de la casa en Valdivia",
+          },
+          {
+            src: "/assets/solar_valdivia_installation2.jpg",
+            alt: "Instalacion en la region de Los Ríos",
+          },
+          {
+            src: "/assets/solar_valdivia_roof2.jpg",
+            alt: "Techo en la region de Los Ríos, Chile",
+          },
+          {
+            src: "/assets/solar_valdivia_control1.jpg",
+            alt: "Otro tipo de instalaciones solares en Valdivia, Los Ríos, Chile",
+          },
+          {
+            src: "/assets/solar_valdivia_roof3.jpg",
+            alt: "Otro tipo de instalaciones solares en Valdivia, Los Ríos, Chile",
+          },
+          {
+            src: "/assets/solar_valdivia_installation1.jpg",
+            alt: "Otro tipo de instalaciones solares en Valdivia, Los Ríos, Chile",
+          },
+          {
+            src: "/assets/solar_valdivia_roof4.jpg",
+            alt: "Otro tipo de instalaciones solares en Valdivia, Los Ríos, Chile",
+          },
+        ]}
+        classRoot="order-2 md:order-none"
+      />
       <div class="self-center">
         <h5>Proyectos ongrid</h5>
         <p class="text-slate-500 text-balance">
@@ -177,81 +161,78 @@ import ShoppingBagMini from "../components/icons/ShoppingBagMini";
           dónde estés.
         </p>
       </div>
-      <div class="relative w-[calc(100vw-2rem)]">
-        <Showcase
-          client:idle
-          description="Temuco, La Araucanía"
-          images={[
-            {
-              src: "./assets/serviu_temuco_roof1.JPG",
-              alt: "Serviu Temuco techo",
-            },
-            {
-              src: "./assets/serviu_temuco_roof2.JPG",
-              alt: "Serviu Temuco techo 2",
-            },
-            {
-              src: "./assets/serviu_temuco_roof3.jpg",
-              alt: "Serviu Temuco techo 3",
-            },
-            {
-              src: "/assets/solar_temuco_roof1.jpg",
-              alt: "Panel solar techo Temuco, La Araucanía, Chile",
-            },
-            {
-              src: "/assets/solar_temuco_roof2.jpg",
-              alt: "Panel 2 solar techo Temuco, La Araucanía, Chile",
-            },
-            {
-              src: "/assets/solar_temuco_roof3.jpg",
-              alt: "Panel 3 solar techo Temuco, La Araucanía, Chile",
-            },
-            {
-              src: "/assets/solar_temuco_controls1.jpg",
-              alt: "Control panel solar techo Temuco, La Araucanía, Chile",
-            },
-          ]}
-        />
-      </div>
+      <Showcase
+        client:idle
+        description="Temuco, La Araucanía"
+        images={[
+          {
+            src: "./assets/serviu_temuco_roof1.JPG",
+            alt: "Serviu Temuco techo",
+          },
+          {
+            src: "./assets/serviu_temuco_roof2.JPG",
+            alt: "Serviu Temuco techo 2",
+          },
+          {
+            src: "./assets/serviu_temuco_roof3.jpg",
+            alt: "Serviu Temuco techo 3",
+          },
+          {
+            src: "/assets/solar_temuco_roof1.jpg",
+            alt: "Panel solar techo Temuco, La Araucanía, Chile",
+          },
+          {
+            src: "/assets/solar_temuco_roof2.jpg",
+            alt: "Panel 2 solar techo Temuco, La Araucanía, Chile",
+          },
+          {
+            src: "/assets/solar_temuco_roof3.jpg",
+            alt: "Panel 3 solar techo Temuco, La Araucanía, Chile",
+          },
+          {
+            src: "/assets/solar_temuco_controls1.jpg",
+            alt: "Control panel solar techo Temuco, La Araucanía, Chile",
+          },
+        ]}
+      />
     </article>
     <article class="grid md:grid-cols-2 gap-4">
-      <div class="order-2 relative w-[calc(100vw-2rem)]">
-        <Showcase
-          client:idle
-          description="Instalaciones en viviendas y privadas."
-          images={[
-            {
-              src: "/assets/privado_solar_roof1.jpg",
-              alt: "Panel solar privado",
-            },
-            {
-              src: "/assets/privado_solar_roof2.jpg",
-              alt: "Panel solar techo",
-            },
-            {
-              src: "/assets/viviendas_controls.jpg",
-              alt: "Controles electricos viviendas",
-            },
-            {
-              src: "/assets/viviendas_ground1.jpg",
-              alt: "Instalaciones nivel suelo",
-            },
-            {
-              src: "/assets/viviendas_ground2.jpg",
-              alt: "Instalaciones nivel suelo a domicilio",
-            },
-            {
-              src: "/assets/privado_solar_controls.jpg",
-              alt: "Controles paneles solares",
-            },
+      <Showcase
+        client:idle
+        description="Instalaciones en viviendas y privadas."
+        images={[
+          {
+            src: "/assets/privado_solar_roof1.jpg",
+            alt: "Panel solar privado",
+          },
+          {
+            src: "/assets/privado_solar_roof2.jpg",
+            alt: "Panel solar techo",
+          },
+          {
+            src: "/assets/viviendas_controls.jpg",
+            alt: "Controles electricos viviendas",
+          },
+          {
+            src: "/assets/viviendas_ground1.jpg",
+            alt: "Instalaciones nivel suelo",
+          },
+          {
+            src: "/assets/viviendas_ground2.jpg",
+            alt: "Instalaciones nivel suelo a domicilio",
+          },
+          {
+            src: "/assets/privado_solar_controls.jpg",
+            alt: "Controles paneles solares",
+          },
 
-            {
-              src: "/assets/viviendas_installation.jpg",
-              alt: "Instalaciones electricas viviendas",
-            },
-          ]}
-        />
-      </div>
+          {
+            src: "/assets/viviendas_installation.jpg",
+            alt: "Instalaciones electricas viviendas",
+          },
+        ]}
+        classRoot="order-2 md:order-none"
+      />
       <div class="self-center">
         <h5>Proyectos hibridos</h5>
         <p class="text-slate-500 text-balance">
