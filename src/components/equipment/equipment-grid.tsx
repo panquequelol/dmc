@@ -2,7 +2,7 @@ import { Dialog } from "@base-ui-components/react/dialog";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { phoneNumber, solar_equipment } from "../../vars";
-import { Eye, X } from "lucide-react";
+import { X } from "lucide-react";
 
 type Props = {
   className: string;

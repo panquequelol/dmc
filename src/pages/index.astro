@@ -28,17 +28,17 @@ import CallToAction from "../components/call-to-action";
   <section>
     <div class="md:flex justify-between items-center">
       <h3 class="font-semibold">Venta de equipos fotovoltaicos</h3>
-      <a href="/catalog" class="underline text-sm"> Ver todo </a>
+      <a href="/catalogo" class="underline text-sm"> Ver todo </a>
     </div>
     <p class="md:text-balance mb-4">
       Además de proyectos eléctricos, ofrecemos la venta de equipos
       fotovoltaicos y soluciones de iluminación solar.
     </p>
-    <EquipmentGrid client:idle className="flex gap-4 overflow-x-auto w-full" />
+    <EquipmentGrid client:load className="flex gap-4 overflow-x-auto w-full" />
   </section>
   <section class="space-y-10">
     <article class="grid md:grid-cols-2 gap-4">
-      <div class="self-center space-y-2">
+      <div class="self-center space-y-2 order-2 md:order-first">
         <p class="font-semibold text-xl">Nuestros servicios</p>
         <p class="text-balance">
           Realizamos proyectos eléctricos residenciales, industriales y
@@ -130,7 +130,7 @@ import CallToAction from "../components/call-to-action";
           },
         ]}
       />
-      <div class="self-center space-y-2">
+      <div class="self-center space-y-2 md:order-last">
         <h5 class="font-semibold text-xl">Proyectos ongrid</h5>
         <p>
           Optimiza tu consumo energético y reduce costos al aprovechar la
@@ -143,7 +143,7 @@ import CallToAction from "../components/call-to-action";
       </div>
     </article>
     <article class="grid md:grid-cols-2 gap-4">
-      <div class="self-center space-y-2">
+      <div class="self-center space-y-2 order-2 md:order-first">
         <h5 class="font-semibold text-xl">Proyectos offgrid</h5>
         <p class="text-balance">
           Convierte áreas remotas en fuentes de energía independientes y
@@ -154,40 +154,42 @@ import CallToAction from "../components/call-to-action";
         </p>
         <CallToAction text="¡Quiero libertad con off-grid!" />
       </div>
-      <WorkShowcase
-        client:idle
-        description="Temuco, La Araucanía"
-        images={[
-          {
-            src: "./assets/serviu_temuco_roof1.JPG",
-            alt: "Serviu Temuco techo",
-          },
-          {
-            src: "./assets/serviu_temuco_roof2.JPG",
-            alt: "Serviu Temuco techo 2",
-          },
-          {
-            src: "./assets/serviu_temuco_roof3.jpg",
-            alt: "Serviu Temuco techo 3",
-          },
-          {
-            src: "/assets/solar_temuco_roof1.jpg",
-            alt: "Panel solar techo Temuco, La Araucanía, Chile",
-          },
-          {
-            src: "/assets/solar_temuco_roof2.jpg",
-            alt: "Panel 2 solar techo Temuco, La Araucanía, Chile",
-          },
-          {
-            src: "/assets/solar_temuco_roof3.jpg",
-            alt: "Panel 3 solar techo Temuco, La Araucanía, Chile",
-          },
-          {
-            src: "/assets/solar_temuco_controls1.jpg",
-            alt: "Control panel solar techo Temuco, La Araucanía, Chile",
-          },
-        ]}
-      />
+      <div>
+        <WorkShowcase
+          client:idle
+          description="Temuco, La Araucanía"
+          images={[
+            {
+              src: "./assets/serviu_temuco_roof1.JPG",
+              alt: "Serviu Temuco techo",
+            },
+            {
+              src: "./assets/serviu_temuco_roof2.JPG",
+              alt: "Serviu Temuco techo 2",
+            },
+            {
+              src: "./assets/serviu_temuco_roof3.jpg",
+              alt: "Serviu Temuco techo 3",
+            },
+            {
+              src: "/assets/solar_temuco_roof1.jpg",
+              alt: "Panel solar techo Temuco, La Araucanía, Chile",
+            },
+            {
+              src: "/assets/solar_temuco_roof2.jpg",
+              alt: "Panel 2 solar techo Temuco, La Araucanía, Chile",
+            },
+            {
+              src: "/assets/solar_temuco_roof3.jpg",
+              alt: "Panel 3 solar techo Temuco, La Araucanía, Chile",
+            },
+            {
+              src: "/assets/solar_temuco_controls1.jpg",
+              alt: "Control panel solar techo Temuco, La Araucanía, Chile",
+            },
+          ]}
+        />
+      </div>
     </article>
     <article class="grid md:grid-cols-2 gap-4">
       <WorkShowcase
