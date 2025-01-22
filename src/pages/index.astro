@@ -1,66 +1,58 @@
 ---
-import Showcase from "../components/Showcase";
 import Layout from "../layouts/Layout.astro";
-import EquipmentCard from "../components/EquipmentCard";
-import { solar_equipment, best_images } from "../vars";
-import ShoppingBagMini from "../components/icons/ShoppingBagMini";
+import EquipmentGrid from "../components/equipment/equipment-grid";
+import WorkShowcase from "../components/work-showcase";
+import { best_images } from "../vars";
+import CallToAction from "../components/call-to-action";
 ---
 
 <Layout title="DMC ingeniería eléctrica">
-  <section class="grid gap-4">
-    <div class="flex items-center flex-col">
-      <h2 class="text-xl text-center text-balance">
-        Instalaciones eléctricas y energía solar.
+  <section class="grid md:grid-cols-2 gap-4 items-center">
+    <div class="flex items-center flex-col max-w-lg mx-auto">
+      <img
+        class="w-16 h-16 aspect-square object-contain shrink-0 mb-4"
+        src="/assets/logo_transparent.png"
+        alt="Logo de DMC Ingeniería Eléctrica"
+      />
+      <h2 class="text-4xl text-center text-balance font-bold">
+        Energía solar e instalaciones eléctricas
       </h2>
-      <p class="max-w-xl text-balance text-center text-slate-500">
-        Somos una empresa especializada en proyectos de baja tensión, abarcando
-        instalaciones domiciliarias, montaje industrial, locales comerciales y
-        alumbrado público en plazas y parques.
+      <p class="max-w-xl text-base text-pretty text-center text-blue-700">
+        Nos especializamos en proyectos de baja tensión, abarcando instalaciones
+        domiciliarias, montaje industrial, locales comerciales y alumbrado
+        público en plazas y parques.
       </p>
     </div>
-    <Showcase client:idle images={best_images} classImage="md:max-h-[30rem]" />
+    <WorkShowcase images={best_images} client:idle />
   </section>
   <section>
-    <div class="flex justify-between items-center">
-      <h3>Venta de equipos fotovoltaicos</h3>
-      <a
-        class="bg-slate-200 font-sans justify-center text-black rounded-md hover:opacity-75 duration-200 text-center text-sm py-1.5 px-4 border border-slate-300 flex gap-1 items-center grow-0"
-        href="/catalog"
-      >
-        <ShoppingBagMini />
-        <span class="hidden md:inline">Ver todo el catalogo</span>
-        <span class="inline md:hidden">Catalogo</span>
-      </a>
+    <div class="md:flex justify-between items-center">
+      <h3 class="font-semibold">Venta de equipos fotovoltaicos</h3>
+      <a href="/catalog" class="underline text-sm"> Ver todo </a>
     </div>
-    <p class="md:text-balance text-slate-500 mb-4">
+    <p class="md:text-balance mb-4">
       Además de proyectos eléctricos, ofrecemos la venta de equipos
       fotovoltaicos y soluciones de iluminación solar.
     </p>
-    <div class="flex gap-4 overflow-x-auto">
-      {
-        solar_equipment.map((equipment) => (
-          <EquipmentCard
-            client:idle
-            src={equipment.src}
-            product={equipment.product}
-            className="w-60"
-          />
-        ))
-      }
-    </div>
+    <EquipmentGrid client:idle className="flex gap-4 overflow-x-auto w-full" />
   </section>
   <section class="space-y-10">
     <article class="grid md:grid-cols-2 gap-4">
-      <div class="self-center">
-        <p>Nuestros servicios</p>
-        <p class="text-slate-500 text-balance">
+      <div class="self-center space-y-2">
+        <p class="font-semibold text-xl">Nuestros servicios</p>
+        <p class="text-balance">
           Realizamos proyectos eléctricos residenciales, industriales y
-          comerciales, así como también en el área de energía renovable,
-          abarcando proyectos fotovoltaicos para viviendas, sistemas de riego,
-          configuraciones Ongrid, Offgrid e híbridas.
+          comerciales. <br />
+          Tambien abarcamos energía renovable:
         </p>
+        <ul class="list-disc">
+          <li>Proyectos fotovoltaicos para viviendas</li>
+          <li>Sistemas de riego</li>
+          <li>Configuraciones Ongrid, Offgrid e híbridas</li>
+        </ul>
+        <CallToAction text="¡Me interesa!" />
       </div>
-      <Showcase
+      <WorkShowcase
         client:idle
         description="Tecnobox, Mall Outlet, Happy Days Waffles, entre otros."
         images={[
@@ -104,7 +96,7 @@ import ShoppingBagMini from "../components/icons/ShoppingBagMini";
       />
     </article>
     <article class="grid md:grid-cols-2 gap-4">
-      <Showcase
+      <WorkShowcase
         client:idle
         description="Valdivia, Los Ríos"
         images={[
@@ -137,31 +129,32 @@ import ShoppingBagMini from "../components/icons/ShoppingBagMini";
             alt: "Otro tipo de instalaciones solares en Valdivia, Los Ríos, Chile",
           },
         ]}
-        classRoot="order-2 md:order-none"
       />
-      <div class="self-center">
-        <h5>Proyectos ongrid</h5>
-        <p class="text-slate-500 text-balance">
-          Experimenta la potencia de la conexión directa a la red eléctrica con
-          nuestros proyectos on-grid. Optimiza tu consumo energético y reduce
-          costos al aprovechar la energía proveniente de la red pública.
+      <div class="self-center space-y-2">
+        <h5 class="font-semibold text-xl">Proyectos ongrid</h5>
+        <p>
+          Optimiza tu consumo energético y reduce costos al aprovechar la
+          energía proveniente de la red pública. Experimenta la potencia de la
+          conexión directa a la red eléctrica con nuestros proyectos on-grid.
           Descubre cómo podemos hacer tu transición energética más eficiente y
           sostenible.
         </p>
+        <CallToAction text="¡Quiero ahorrar con on-grid!" />
       </div>
     </article>
     <article class="grid md:grid-cols-2 gap-4">
-      <div class="self-center">
-        <h5>Proyectos offgrid</h5>
-        <p class="text-slate-500 text-balance">
-          Libertad energética donde sea que vayas con nuestros proyectos
-          off-grid. Convierte áreas remotas en fuentes de energía independientes
-          y sostenibles. Ya sea para una cabaña en la montaña o una comunidad
+      <div class="self-center space-y-2">
+        <h5 class="font-semibold text-xl">Proyectos offgrid</h5>
+        <p class="text-balance">
+          Convierte áreas remotas en fuentes de energía independientes y
+          sostenibles. Ya sea para una cabaña en la montaña o una comunidad
           lejos de la red, nuestros sistemas te mantienen conectado sin importar
-          dónde estés.
+          dónde estés. Libertad energética donde sea que vayas con nuestros
+          proyectos off-grid.
         </p>
+        <CallToAction text="¡Quiero libertad con off-grid!" />
       </div>
-      <Showcase
+      <WorkShowcase
         client:idle
         description="Temuco, La Araucanía"
         images={[
@@ -197,7 +190,7 @@ import ShoppingBagMini from "../components/icons/ShoppingBagMini";
       />
     </article>
     <article class="grid md:grid-cols-2 gap-4">
-      <Showcase
+      <WorkShowcase
         client:idle
         description="Instalaciones en viviendas y privadas."
         images={[
@@ -231,17 +224,17 @@ import ShoppingBagMini from "../components/icons/ShoppingBagMini";
             alt: "Instalaciones electricas viviendas",
           },
         ]}
-        classRoot="order-2 md:order-none"
       />
-      <div class="self-center">
-        <h5>Proyectos hibridos</h5>
-        <p class="text-slate-500 text-balance">
+      <div class="self-center space-y-2">
+        <h5 class="text-xl font-semibold">Proyectos hibridos</h5>
+        <p class="text-balance">
           Combina lo mejor de ambos mundos con nuestros proyectos eléctricos
           híbridos. Integra fuentes de energía renovable con respaldo de la red
           para una solución completa y adaptable a tus necesidades. Maximiza la
           eficiencia y la confiabilidad con sistemas que se ajustan a cualquier
           entorno, ya sea rural o urbano.
         </p>
+        <CallToAction text="¡Quiero la máxima eficiencia!" />
       </div>
     </article>
   </section>

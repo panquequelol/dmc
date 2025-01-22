@@ -1,7 +1,6 @@
 ---
-import EquipmentCard from "../components/EquipmentCard";
-import { solar_equipment } from "../vars";
 import Layout from "../layouts/Layout.astro";
+import EquipmentGrid from "../components/equipment/equipment-grid";
 ---
 
 <Layout title="DMC ingeniería eléctrica, equipos fotovoltaicos">
@@ -13,16 +12,6 @@ import Layout from "../layouts/Layout.astro";
       Además de proyectos eléctricos, ofrecemos la venta de equipos
       fotovoltaicos y soluciones de iluminación solar.
     </p>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {
-        solar_equipment.map((equipment) => (
-          <EquipmentCard
-            client:idle
-            src={equipment.src}
-            product={equipment.product}
-          />
-        ))
-      }
-    </div>
+    <EquipmentGrid className="grid grid-cols-3 gap-4" client:load />
   </section>
 </Layout>

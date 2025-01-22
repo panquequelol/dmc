@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ["Ortica Linear", ...defaultTheme.fontFamily.serif],
+        body: ["Mozilla Text", ...defaultTheme.fontFamily.serif],
       },
     },
   },
